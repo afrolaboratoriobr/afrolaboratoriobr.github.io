@@ -1427,7 +1427,7 @@
 
         /* =========================================================
            IMAGENS DOS CARDS
-           Agora basta trocar o valor do src="..." no próprio HTML.
+           trocar o valor do src="..." no próprio HTML.
            ========================================================= */
 
         .card-imagem {
@@ -1846,6 +1846,34 @@
     max-height: 360px;
     object-fit: cover;
 }
+
+    /* =========================================================
+       CORREÇÃO DAS FOTOS DOS INTEGRANTES NO CELULAR
+       NÃO ALTERA O DESKTOP
+       ========================================================= */
+
+    @media (max-width: 600px) {
+
+        .integrante-foto {
+            height: 340px;
+            width: 100%;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #222;
+        }
+
+        .integrante-foto img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center center;
+            display: block;
+        }
+
+    }
 
 </style>
 
@@ -2595,12 +2623,26 @@ O bloco vem ganhando força e conquistando seu espaço na quebrada, no carnaval 
                         <p></p>
                     </article>
 
+<article class="oficina-card reveal" id="oficina-percussao">
+
+    <img class="card-imagem" src="imagens/percussão.jpeg" alt="Foto da oficina de Percussão">
+
+    <h3>Percussão</h3>
+    <p></p>
+
+</article>
+
+
+
+
+
                     <article class="oficina-card reveal" id="oficina-breaking">
                         <!-- TROQUE SOMENTE O src ABAIXO PELA FOTO DA OFICINA. -->
                         <img class="card-imagem" src="imagens/breakofn.jpeg" alt="Foto da oficina">
 
                         <h3>Breaking</h3>
                         <p></p>
+
                     </article>
 
                 </div>
@@ -2642,31 +2684,11 @@ O bloco vem ganhando força e conquistando seu espaço na quebrada, no carnaval 
                         </div>
                         <div class="integrante-info">
                             <h3>Getri</h3>
-                            <p>Coordenador
-de Artes Visuais e Arte-Educador
-de Muralismo. Coordenador da
-Escola de Graffiti e Artes Visuais
-Tio Trampo
-Grafiteiro, artista visual e
-ativista
-urbano
-com
-sólida
-carreira no cenário da street art
-gaúcha. É o principal instrutor e
-articulador da Escola de Graffiti
-Tio Trampo, onde leciona história
-da arte urbana, técnicas de spray,
-desenho, stencil e pintura em
-grandes
-formatos
-para
-a
-transformação
-estética
-de
-territórios vulnerabilizados.</p>
+                        <p> Getri é grafiteiro desde 2005, um dos fundadores e presidente do Galpão Cultural Casa de Hip Hop no Morro da Cruz, Partenon. Integrante da Nação Hip Hop Brasil, produtor e cenógrafo do Hip Hop TV da TVE e artista da Feira de Hip Hop de POA. Oficineiro, idealizador do Sábado Cultural e, 
+                            em 2026, da Escola de Graffiti e Artes Visuais Tio Trampo com Negra Jaque.</p>
                         </div>
+
+
                     </article>
 
                     <article class="integrante-card reveal">
@@ -2801,34 +2823,52 @@ patrimônio imaterial.</p>
                         </div>
                     </article>
 
+
+<article class="integrante-card reveal">
+    <div class="integrante-foto">
+
+        <img src="imagens/moab.jpeg" alt="Foto do integrante Moab">
+
+    </div>
+
+    <div class="integrante-info">
+        <h3>Moab</h3>
+        <p>
+            Moabe, conhecido como Bboy D’Black, é dançarino, artista e arte-educador. Atua desde o final de 2006 na cultura Hip Hop, representando a Slaves Beat Crew. Desde 2009  compartilhando conhecimento e formando através da dança. Desenvolveu trajetória destacada, participando do show francês Le Cirque Amar e do show americano, além de ser campeão do Brandan 2011 — Etapa Nordeste. Em 2011 recebeu o prêmio de Melhor Dançarino do Ano, no Hot Festival, evento realizado em Natal/RN que reconhece o melhor dançarino do ano. Realizou a abertura do espetáculo A Paixão de Cristo, transmitido para 89 países, e acumula diversas competições e participações em programas de televisão. Tem como propósito deixar um legado através da arte.
+        </p>
+    </div>
+</article>
+
+
+
+
+
+
+
+
                     <!-- INTEGRANTE 09 -->
                     
-                    <article class="integrante-card reveal">
-                        <div class="integrante-foto">
+<article class="integrante-card reveal">
+    <div class="integrante-foto">
 
-                            <img src="imagens/italoeduc.jpeg" alt="Foto do integrante 09">
+        <img src="imagens/italoeduc.jpeg" alt="Foto do integrante 09">
 
-                        </div>
-                        <div class="integrante-info">
-                            <h3>ítalo soares</h3>
-                            <p>Professor de Capoeira e
-Saberes Tradicionais.
-Educador físico e
-capoeirista
-dedicado
-à
-salvaguarda da capoeira como
-patrimônio
-cultural
-imaterial.
-Ministra aulas de movimentação
-corporal, musicalidade tradicional,
-história da resistência negra e
-fortalecimento da cidadania por
-meio da disciplina e filosofia da
-roda.</p>
-                        </div>
-                    </article>
+    </div>
+
+    <div class="integrante-info">
+        <h3>Ítalo Soares</h3>
+
+        <p>
+            Professor de Capoeira e Saberes Tradicionais.
+            Educador físico e capoeirista dedicado à salvaguarda
+            da capoeira como patrimônio cultural imaterial.
+            Ministra aulas de movimentação corporal, musicalidade
+            tradicional, história da resistência negra e fortalecimento
+            da cidadania por meio da disciplina e filosofia da roda.
+        </p>
+    </div>
+</article>
+
 
                 </div>
 
@@ -3128,7 +3168,7 @@ roda.</p>
 
                     <div class="foto reveal">
 
-                        <img src="imagens/comunidade.jpg" alt="Comunidade">
+                        <img src="imagens/comunidade2.jpeg" alt="Comunidade">
 
                         <div class="foto-legenda">
                             Comunidade
