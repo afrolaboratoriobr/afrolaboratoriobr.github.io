@@ -1,0 +1,4075 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Instituto Socioeducativo Afrolaboratório — cultura negra, arte urbana, educação, graffiti, artes visuais, podcast, música, oficinas e projetos culturais em Porto Alegre.">
+
+    <title>Afrolaboratório | Cultura • Arte • Educação</title>
+
+
+    <!-- =========================================================
+         FONTES
+         ========================================================= -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700;900&family=Ewert&display=swap"
+        rel="stylesheet">
+
+
+    <style>
+
+        /* =========================================================
+           CONFIGURAÇÕES GERAIS
+           ========================================================= */
+
+        :root {
+
+            --preto: #090909;
+            --preto-2: #111111;
+
+            --amarelo: #f5c400;
+            --amarelo-claro: #ffd83d;
+
+            --branco: #f5f2e8;
+
+            --cinza: #b7b7b7;
+            --cinza-escuro: #1d1d1d;
+
+            --vermelho: #d63c24;
+
+            --titulo: "Bebas Neue", sans-serif;
+            --decorativa: "Ewert", serif;
+            --corpo: "DM Sans", sans-serif;
+        }
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            background: var(--preto);
+            color: var(--branco);
+            font-family: var(--corpo);
+            overflow-x: hidden;
+        }
+
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+
+        /* =========================================================
+           PADRÃO GEOMÉTRICO
+           ========================================================= */
+
+        .pattern {
+
+            background-color: var(--amarelo);
+
+            background-image:
+                linear-gradient(45deg, var(--preto) 25%, transparent 25%),
+                linear-gradient(-45deg, var(--preto) 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, var(--preto) 75%),
+                linear-gradient(-45deg, transparent 75%, var(--preto) 75%);
+
+            background-size: 28px 28px;
+
+            background-position:
+                0 0,
+                0 14px,
+                14px -14px,
+                -14px 0px;
+        }
+
+
+        /* =========================================================
+           NAVBAR
+           ========================================================= */
+
+        header {
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+
+            z-index: 1000;
+
+            background: rgba(9, 9, 9, 0.94);
+
+            backdrop-filter: blur(10px);
+
+            border-bottom: 2px solid var(--amarelo);
+        }
+
+
+        nav {
+
+            width: min(1200px, 92%);
+
+            margin: auto;
+
+            min-height: 78px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+
+        .logo {
+
+            font-family: var(--titulo);
+
+            font-size: 32px;
+
+            letter-spacing: 2px;
+
+            color: var(--amarelo);
+        }
+
+
+        .logo span {
+            color: var(--branco);
+        }
+
+
+        .menu {
+
+            display: flex;
+
+            gap: 28px;
+
+            align-items: center;
+
+            list-style: none;
+        }
+
+
+        .menu a {
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+
+            transition: 0.3s;
+        }
+
+
+        .menu a:hover {
+            color: var(--amarelo);
+        }
+
+
+        .menu-button {
+
+            display: none;
+
+            background: transparent;
+
+            border: none;
+
+            color: var(--amarelo);
+
+            font-size: 30px;
+
+            cursor: pointer;
+        }
+
+
+        /* =========================================================
+           HERO / ABERTURA
+           ========================================================= */
+
+        .hero {
+
+            min-height: 100vh;
+
+            position: relative;
+
+            display: flex;
+
+            align-items: center;
+
+            overflow: hidden;
+
+            background:
+                radial-gradient(
+                    circle at 80% 20%,
+                    #302700 0%,
+                    transparent 35%
+                ),
+                var(--preto);
+        }
+
+
+        .hero::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            opacity: 0.08;
+
+            background-image:
+                radial-gradient(
+                    var(--amarelo) 1px,
+                    transparent 1px
+                );
+
+            background-size: 20px 20px;
+        }
+
+
+        .hero-content {
+
+            width: min(1200px, 92%);
+
+            margin: auto;
+
+            position: relative;
+
+            z-index: 2;
+
+            padding-top: 125px;
+
+            padding-bottom: 80px;
+        }
+
+
+        /* =========================================================
+           LOGOS PRINCIPAIS
+           ========================================================= */
+
+        .hero-logos {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+            margin-bottom: 50px;
+            width: 100%;
+        }
+
+        .hero-logo-box {
+            width: 100%;
+            aspect-ratio: 1 / 0.92;
+            min-height: 250px;
+            background: var(--branco);
+            padding: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--amarelo);
+            box-shadow: 8px 8px 0 rgba(245, 196, 0, 0.25);
+            transition: 0.3s ease;
+            overflow: hidden;
+        }
+
+        .hero-logo-box:hover {
+            transform: translateY(-7px) scale(1.02);
+            box-shadow: 12px 12px 0 rgba(245, 196, 0, 0.4);
+        }
+
+        .hero-logo-box a {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-logo-box img {
+            width: 100%;
+            max-width: 100%;
+            height: 190px;
+            object-fit: contain;
+        }
+
+        .hero-logo-box:nth-child(1),
+        .hero-logo-box:nth-child(2) {
+            min-height: 270px;
+        }
+
+        .hero-logo-box.tio-trampo {
+            background: var(--amarelo);
+            border-color: var(--branco);
+        }
+
+        .hero-logo-box.tio-trampo img {
+            max-width: 98%;
+            height: 210px;
+        }
+
+        .hero-logo-box.logo-placeholder {
+            background: #e9e6dc;
+        }
+
+        .hero-logo-box.logo-placeholder span {
+            font-family: var(--titulo);
+            font-size: 32px;
+            line-height: 0.9;
+            color: var(--preto);
+            text-align: center;
+        }
+
+
+        .hero-tag {
+
+            display: inline-block;
+
+            background: var(--amarelo);
+
+            color: var(--preto);
+
+            padding: 8px 16px;
+
+            font-weight: 900;
+
+            text-transform: uppercase;
+
+            transform: rotate(-2deg);
+
+            margin-bottom: 25px;
+        }
+
+
+        .hero h1 {
+
+            max-width: 850px;
+
+            font-family: var(--titulo);
+
+            font-size: clamp(70px, 11vw, 155px);
+
+            line-height: 0.82;
+
+            text-transform: uppercase;
+
+            letter-spacing: 2px;
+        }
+
+
+        .hero h1 span {
+            color: var(--amarelo);
+        }
+
+
+        .hero-description {
+
+            max-width: 700px;
+
+            margin-top: 35px;
+
+            color: #d0d0d0;
+
+            font-size: 18px;
+
+            line-height: 1.7;
+        }
+
+
+        .hero-buttons {
+
+            margin-top: 35px;
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 15px;
+        }
+
+
+        .btn {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 15px 25px;
+
+            border: 2px solid var(--amarelo);
+
+            background: var(--amarelo);
+
+            color: var(--preto);
+
+            font-weight: 900;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+
+            transition: 0.3s;
+
+            cursor: pointer;
+        }
+
+
+        .btn:hover {
+
+            background: transparent;
+
+            color: var(--amarelo);
+
+            transform: translateY(-3px);
+        }
+
+
+        .btn-dark {
+
+            background: transparent;
+
+            color: var(--amarelo);
+        }
+
+
+        .btn-dark:hover {
+
+            background: var(--amarelo);
+
+            color: var(--preto);
+        }
+
+
+        .hero-decoration {
+
+            position: absolute;
+
+            right: -100px;
+
+            bottom: 40px;
+
+            width: 430px;
+
+            height: 430px;
+
+            border: 45px solid var(--amarelo);
+
+            transform: rotate(25deg);
+
+            opacity: 0.8;
+        }
+
+
+        .hero-decoration::before,
+        .hero-decoration::after {
+
+            content: "";
+
+            position: absolute;
+
+            background: var(--preto);
+        }
+
+
+        .hero-decoration::before {
+
+            width: 100%;
+
+            height: 30px;
+
+            top: 50%;
+
+            left: 0;
+        }
+
+
+        .hero-decoration::after {
+
+            width: 30px;
+
+            height: 100%;
+
+            top: 0;
+
+            left: 50%;
+        }
+
+
+        /* =========================================================
+           TICKER
+           ========================================================= */
+
+        .ticker {
+
+            background: var(--amarelo);
+
+            color: var(--preto);
+
+            padding: 14px 0;
+
+            overflow: hidden;
+
+            border-top: 3px solid var(--preto);
+
+            border-bottom: 3px solid var(--preto);
+        }
+
+
+        .ticker-content {
+
+            display: flex;
+
+            width: max-content;
+
+            animation: correr 20s linear infinite;
+        }
+
+
+        .ticker span {
+
+            font-family: var(--titulo);
+
+            font-size: 30px;
+
+            letter-spacing: 2px;
+
+            margin-right: 40px;
+        }
+
+
+        @keyframes correr {
+
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+
+        /* =========================================================
+           SEÇÕES
+           ========================================================= */
+
+        section {
+            padding: 110px 0;
+        }
+
+
+        .container {
+
+            width: min(1200px, 92%);
+
+            margin: auto;
+        }
+
+
+        .section-header {
+            margin-bottom: 60px;
+        }
+
+
+        .section-number {
+
+            color: var(--amarelo);
+
+            font-size: 14px;
+
+            font-weight: 900;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+        }
+
+
+        .section-title {
+
+            font-family: var(--titulo);
+
+            font-size: clamp(55px, 8vw, 100px);
+
+            line-height: 0.9;
+
+            text-transform: uppercase;
+
+            margin-top: 10px;
+        }
+
+
+        .section-title span {
+            color: var(--amarelo);
+        }
+
+
+        /* =========================================================
+           SOBRE
+           ========================================================= */
+
+        .sobre {
+
+            background: var(--branco);
+
+            color: var(--preto);
+        }
+
+
+        .sobre-grid {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+
+        .sobre-texto {
+
+            font-size: 19px;
+
+            line-height: 1.8;
+        }
+
+
+        .sobre-texto p + p {
+            margin-top: 20px;
+        }
+
+
+        .sobre-destaque {
+
+            background: var(--preto);
+
+            color: var(--branco);
+
+            padding: 50px;
+
+            position: relative;
+
+            box-shadow: 15px 15px 0 var(--amarelo);
+        }
+
+
+        .sobre-destaque h3 {
+
+            color: var(--amarelo);
+
+            font-family: var(--titulo);
+
+            font-size: 52px;
+
+            line-height: 0.95;
+
+            margin-bottom: 20px;
+        }
+
+
+        .sobre-destaque p {
+
+            color: #ddd;
+
+            line-height: 1.7;
+        }
+
+
+        .decorative-letter {
+
+            font-family: var(--decorativa);
+
+            font-size: 100px;
+
+            color: var(--amarelo);
+
+            position: absolute;
+
+            right: 15px;
+
+            bottom: -25px;
+
+            opacity: 0.25;
+        }
+
+
+        /* =========================================================
+           ESCOLA TIO TRAMPO
+           ========================================================= */
+
+        .escola {
+            background: var(--preto);
+        }
+
+
+        .escola-grid {
+
+            display: grid;
+
+            grid-template-columns: 1.2fr 0.8fr;
+
+            gap: 50px;
+
+            align-items: stretch;
+        }
+
+
+        .escola-card {
+
+            background: var(--amarelo);
+
+            color: var(--preto);
+
+            padding: 55px;
+
+            min-height: 500px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: space-between;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        .escola-card h3 {
+
+            font-family: var(--titulo);
+
+            font-size: clamp(60px, 7vw, 100px);
+
+            line-height: 0.82;
+        }
+
+
+        .escola-card p {
+
+            margin-top: 30px;
+
+            font-size: 18px;
+
+            line-height: 1.6;
+
+            max-width: 650px;
+        }
+
+
+        .escola-card small {
+
+            font-weight: 900;
+
+            text-transform: uppercase;
+
+            letter-spacing: 2px;
+        }
+
+
+        .escola-pattern {
+            min-height: 500px;
+        }
+
+
+        /* =========================================================
+           DESTAQUE DOS ESPAÇOS
+           ========================================================= */
+
+        .espacos {
+
+            background: #151515;
+
+            color: var(--branco);
+        }
+
+
+        .espacos-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+
+        .espaco-card {
+
+            padding: 35px;
+
+            background: var(--cinza-escuro);
+
+            border-top: 6px solid var(--amarelo);
+
+            min-height: 330px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: space-between;
+
+            transition: 0.3s;
+        }
+
+
+        .espaco-card:hover {
+
+            transform: translateY(-8px);
+
+            background: #242424;
+        }
+
+
+        .espaco-numero {
+
+            color: var(--amarelo);
+
+            font-family: var(--titulo);
+
+            font-size: 45px;
+        }
+
+
+        .espaco-card h3 {
+
+            font-family: var(--titulo);
+
+            font-size: 42px;
+
+            line-height: 0.9;
+
+            margin: 15px 0;
+        }
+
+
+        .espaco-card p {
+
+            color: #bbb;
+
+            line-height: 1.6;
+        }
+
+
+        .espaco-endereco {
+
+            margin-top: 20px;
+
+            color: var(--amarelo);
+
+            font-size: 14px;
+
+            font-weight: 900;
+
+            line-height: 1.5;
+        }
+
+
+        .espaco-card .btn {
+
+            margin-top: 25px;
+
+            align-self: flex-start;
+
+            padding: 12px 18px;
+
+            font-size: 12px;
+        }
+
+
+        /* =========================================================
+           GALERIA
+           ========================================================= */
+
+        .galeria {
+            background: #111;
+        }
+
+
+        .galeria-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 15px;
+        }
+
+
+        .foto {
+
+            height: 350px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            background: #222;
+        }
+
+
+        /* A galeria já está preparada para receber <img src="...">.
+           Basta substituir o bloco .foto-placeholder pelo <img>. */
+        .foto img {
+
+            display: block;
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: 0.5s;
+        }
+
+
+        .foto:hover img {
+            transform: scale(1.08);
+        }
+
+
+        .foto::after {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    transparent 55%,
+                    rgba(0,0,0,0.8)
+                );
+        }
+
+
+        .foto-legenda {
+
+            position: absolute;
+
+            z-index: 2;
+
+            bottom: 20px;
+
+            left: 20px;
+
+            font-family: var(--titulo);
+
+            font-size: 28px;
+
+            color: var(--amarelo);
+        }
+
+
+        .foto-placeholder {
+
+            height: 100%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 30px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #222 25%,
+                    #292929 25%,
+                    #292929 50%,
+                    #222 50%,
+                    #222 75%,
+                    #292929 75%
+                );
+
+            background-size: 30px 30px;
+
+            color: var(--amarelo);
+
+            font-family: var(--titulo);
+
+            font-size: 35px;
+        }
+
+
+        /* =========================================================
+           CONTATO
+           ========================================================= */
+
+        .contato {
+
+            background: var(--amarelo);
+
+            color: var(--preto);
+        }
+
+
+        .contato-grid {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 70px;
+        }
+
+
+        .contato h2 {
+
+            font-family: var(--titulo);
+
+            font-size: clamp(70px, 9vw, 120px);
+
+            line-height: 0.8;
+        }
+
+
+        .contato h2 span {
+
+            color: var(--branco);
+
+            -webkit-text-stroke: 2px var(--preto);
+        }
+
+
+        .contatos-links {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 15px;
+        }
+
+
+        .contato-link {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            border-bottom: 2px solid var(--preto);
+
+            padding: 20px 0;
+
+            font-weight: 900;
+
+            text-transform: uppercase;
+
+            transition: 0.3s;
+        }
+
+
+        .contato-link:hover {
+
+            padding-left: 10px;
+
+            padding-right: 10px;
+
+            background: var(--preto);
+
+            color: var(--amarelo);
+        }
+
+
+        /* =========================================================
+           ENDEREÇOS
+           ========================================================= */
+
+        .endereco {
+
+            background: var(--branco);
+
+            color: var(--preto);
+        }
+
+
+        .endereco-box {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+
+            gap: 40px;
+
+            align-items: center;
+        }
+
+
+        .endereco-info h3 {
+
+            font-family: var(--titulo);
+
+            font-size: 70px;
+
+            line-height: 0.85;
+
+            margin-bottom: 25px;
+        }
+
+
+        .endereco-info p {
+
+            font-size: 20px;
+
+            line-height: 1.7;
+
+            margin-bottom: 25px;
+        }
+
+
+        .mapa {
+
+            min-height: 350px;
+
+            background: var(--preto);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        .mapa::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 500px;
+
+            height: 500px;
+
+            border: 80px solid var(--amarelo);
+
+            border-radius: 50%;
+
+            transform: rotate(30deg);
+
+            opacity: 0.8;
+        }
+
+
+        .mapa-conteudo {
+
+            position: relative;
+
+            z-index: 2;
+
+            text-align: center;
+
+            color: var(--branco);
+
+            padding: 20px;
+        }
+
+
+        .mapa-conteudo strong {
+
+            display: block;
+
+            color: var(--amarelo);
+
+            font-family: var(--titulo);
+
+            font-size: 50px;
+        }
+
+
+        /* =========================================================
+           ENDEREÇO ADMINISTRATIVO
+           ========================================================= */
+
+        .administrativo {
+
+            background: var(--preto);
+
+            color: var(--branco);
+        }
+
+
+        .administrativo-box {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 60px;
+
+            align-items: center;
+        }
+
+
+        .administrativo h2 {
+
+            font-family: var(--titulo);
+
+            font-size: clamp(60px, 8vw, 100px);
+
+            line-height: 0.85;
+        }
+
+
+        .administrativo h2 span {
+
+            color: var(--amarelo);
+        }
+
+
+        .administrativo-texto {
+
+            font-size: 19px;
+
+            line-height: 1.7;
+
+            color: #ccc;
+        }
+
+
+        .administrativo-destaques {
+
+            margin-top: 30px;
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+        }
+
+
+        .tag {
+
+            background: var(--amarelo);
+
+            color: var(--preto);
+
+            padding: 10px 14px;
+
+            font-size: 12px;
+
+            font-weight: 900;
+
+            text-transform: uppercase;
+        }
+
+
+        .administrativo-endereco {
+
+            background: var(--amarelo);
+
+            color: var(--preto);
+
+            padding: 35px;
+
+            margin-top: 30px;
+
+            font-weight: 700;
+
+            line-height: 1.6;
+
+            box-shadow: 12px 12px 0 var(--branco);
+        }
+
+
+        /* =========================================================
+           FOOTER
+           ========================================================= */
+
+        footer {
+
+            background: var(--preto);
+
+            padding: 60px 0 30px;
+        }
+
+
+        .footer-grid {
+
+            display: grid;
+
+            grid-template-columns: 2fr 1fr 1fr;
+
+            gap: 50px;
+
+            padding-bottom: 50px;
+
+            border-bottom: 1px solid #333;
+        }
+
+
+        .footer-logo {
+
+            font-family: var(--titulo);
+
+            color: var(--amarelo);
+
+            font-size: 50px;
+        }
+
+
+        footer p {
+
+            color: #aaa;
+
+            line-height: 1.6;
+
+            max-width: 450px;
+        }
+
+
+        .footer-column h4 {
+
+            color: var(--amarelo);
+
+            text-transform: uppercase;
+
+            margin-bottom: 20px;
+        }
+
+
+        .footer-column a {
+
+            display: block;
+
+            color: #ccc;
+
+            margin-bottom: 10px;
+
+            transition: 0.3s;
+        }
+
+
+        .footer-column a:hover {
+            color: var(--amarelo);
+        }
+
+
+        .copyright {
+
+            padding-top: 25px;
+
+            color: #666;
+
+            font-size: 13px;
+        }
+
+
+
+
+        /* =========================================================
+           PROJETOS E OFICINAS
+           ========================================================= */
+
+        .projetos {
+            background: var(--preto);
+        }
+
+        .projetos-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        /* =========================================================
+           IMAGENS DOS CARDS
+           Agora basta trocar o valor do src="..." no próprio HTML.
+           ========================================================= */
+
+        .card-imagem {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+            margin-bottom: 24px;
+            border: 2px solid #333;
+        }
+
+        .espaco-card .card-imagem {
+            height: 190px;
+            margin-bottom: 24px;
+        }
+
+        .projeto-card {
+            background: var(--cinza-escuro);
+            border: 2px solid #333;
+            padding: 35px;
+            min-height: 280px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: 0.3s;
+        }
+
+        .projeto-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--amarelo);
+        }
+
+        .projeto-card h3 {
+            font-family: var(--titulo);
+            font-size: 44px;
+            line-height: 0.9;
+            color: var(--amarelo);
+            margin-bottom: 18px;
+        }
+
+        .projeto-card p {
+            color: #ccc;
+            line-height: 1.7;
+        }
+
+        .projeto-card .btn {
+            margin-top: 25px;
+            align-self: flex-start;
+            padding: 11px 16px;
+            font-size: 12px;
+        }
+
+        .oficinas {
+            background: var(--branco);
+            color: var(--preto);
+        }
+
+        .oficinas .section-number {
+            color: var(--vermelho);
+        }
+
+        .oficinas-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .oficina-card {
+            background: var(--preto);
+            color: var(--branco);
+            border-left: 9px solid var(--amarelo);
+            padding: 28px;
+            min-height: 300px;
+            scroll-margin-top: 100px;
+        }
+
+        .oficina-card h3 {
+            font-family: var(--titulo);
+            color: var(--amarelo);
+            font-size: 30px;
+            line-height: 0.5;
+            margin-bottom: 5px;
+        }
+
+        .oficina-card p {
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        .integrantes {
+            background: #151515;
+        }
+
+        .integrantes-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .integrante-card {
+            background: var(--cinza-escuro);
+            border-top: 5px solid var(--amarelo);
+            overflow: hidden;
+        }
+
+        /* =========================================================
+           IMAGENS DOS INTEGRANTES
+           Se você colocar uma <img> dentro de .integrante-foto,
+           esta regra fará a foto ocupar o espaço corretamente.
+           ========================================================= */
+
+        .integrante-foto img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        .integrante-foto {
+            height: 260px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            background:
+                linear-gradient(
+                    135deg,
+                    #222 25%,
+                    #292929 25%,
+                    #292929 50%,
+                    #222 50%,
+                    #222 75%,
+                    #292929 75%
+                );
+            background-size: 30px 30px;
+            color: var(--amarelo);
+            font-family: var(--titulo);
+            font-size: 30px;
+        }
+
+        .integrante-info {
+            padding: 24px;
+        }
+
+        .integrante-info h3 {
+            font-family: var(--titulo);
+            font-size: 34px;
+            line-height: 0.9;
+            color: var(--amarelo);
+            margin-bottom: 12px;
+        }
+
+        .integrante-info p {
+            color: #bbb;
+            line-height: 1.6;
+        }
+
+        .projeto-destaque {
+            margin-top: 25px;
+            background: var(--amarelo);
+            color: var(--preto);
+            padding: 28px;
+            border-left: 8px solid var(--branco);
+        }
+
+        .projeto-destaque h3 {
+            font-family: var(--titulo);
+            font-size: 46px;
+            line-height: 0.9;
+            margin-bottom: 12px;
+        }
+
+        .logo-placeholder span {
+            font-family: var(--titulo);
+            font-size: 25px;
+            line-height: 0.9;
+            color: var(--preto);
+            text-align: center;
+        }
+
+        /* =========================================================
+           ANIMAÇÕES
+           ========================================================= */
+
+        .reveal {
+
+            opacity: 0;
+
+            transform: translateY(40px);
+
+            transition: 0.8s ease;
+        }
+
+
+        .reveal.active {
+
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+
+
+        /* =========================================================
+           RESPONSIVO
+           ========================================================= */
+
+        @media (max-width: 900px) {
+
+            .menu-button {
+                display: block;
+            }
+
+
+            .menu {
+
+                position: absolute;
+
+                top: 78px;
+
+                left: 0;
+
+                width: 100%;
+
+                background: var(--preto);
+
+                display: none;
+
+                flex-direction: column;
+
+                padding: 30px;
+
+                border-bottom: 2px solid var(--amarelo);
+            }
+
+
+            .menu.active {
+                display: flex;
+            }
+
+
+            .sobre-grid,
+            .escola-grid,
+            .contato-grid,
+            .endereco-box,
+            .administrativo-box {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .espacos-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projetos-grid,
+            .oficinas-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .integrantes-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+
+            .galeria-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+
+            .hero-decoration {
+
+                opacity: 0.15;
+
+                right: -200px;
+            }
+
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .hero-logos {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 18px;
+            }
+
+            .hero-logo-box {
+                min-height: 220px;
+                aspect-ratio: 1 / 0.92;
+                padding: 12px;
+            }
+
+            .hero-logo-box img {
+                height: 170px;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            .hero {
+                min-height: 100vh;
+            }
+
+
+            .hero-content {
+                padding-top: 115px;
+            }
+
+
+            .hero h1 {
+                font-size: 72px;
+            }
+
+
+            section {
+                padding: 75px 0;
+            }
+
+
+            .sobre-destaque,
+            .escola-card {
+                padding: 30px;
+            }
+
+
+            .galeria-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projetos-grid,
+            .oficinas-grid,
+            .integrantes-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .foto {
+                height: 300px;
+            }
+
+
+            .contato h2 {
+                font-size: 75px;
+            }
+
+
+            .hero-logos {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .hero-logo-box,
+            .hero-logo-box:nth-child(1),
+            .hero-logo-box:nth-child(2) {
+                min-height: 230px;
+                aspect-ratio: 1 / 0.92;
+            }
+
+            .hero-logo-box {
+                padding: 12px;
+                border-width: 2px;
+            }
+
+            .hero-logo-box img {
+                height: 175px;
+                max-width: 90%;
+            }
+
+            .hero-logo-box.tio-trampo img {
+                height: 185px;
+            }
+
+
+            .espaco-card {
+                min-height: 280px;
+            }
+        }
+
+    
+/* =========================================================
+   IMAGENS - CAMPOS JÁ PRONTOS PARA SUBSTITUIÇÃO
+   ========================================================= */
+.integrante-foto img,
+.foto-placeholder img,
+.projeto-card img,
+.oficina-card img,
+.espaco-card img,
+.projeto-destaque img,
+.escola-pattern img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.integrante-foto,
+.foto-placeholder {
+    overflow: hidden;
+}
+.projeto-card img,
+.oficina-card img {
+    max-height: 220px;
+    object-fit: cover;
+    margin-bottom: 18px;
+}
+.espaco-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+.projeto-destaque img,
+.escola-pattern img {
+    max-height: 360px;
+    object-fit: cover;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+    <!-- =========================================================
+         corpo de inicio atualizar a cada 2 semanas
+         ========================================================= -->
+
+
+    <!-- =========================================================
+         MENU
+         ========================================================= -->
+
+    <header>
+
+        <nav>
+
+            <a href="#inicio" class="logo">
+                AFRO<span>LAB</span>
+            </a>
+
+
+            <button
+                class="menu-button"
+                id="menuButton"
+                aria-label="Abrir menu"
+            >
+                ☰
+            </button>
+
+
+            <ul class="menu" id="menu">
+
+                <li>
+                    <a href="#sobre">
+                        O Instituto
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#escola">
+                        Escola Tio Trampo
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#oficinas">
+                        Oficinas
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#espacos">
+                        Nossos espaços
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#galeria">
+                        Galeria
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#contato">
+                        Contato
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================================================
+         HERO
+         ========================================================= -->
+
+    <main>
+
+        <section
+            class="hero"
+            id="inicio"
+        >
+
+            <div class="hero-decoration"></div>
+
+
+            <div class="hero-content">
+
+
+                <!-- =================================================
+                     LOGOS PRINCIPAIS
+                     ================================================= -->
+
+                <div class="hero-logos reveal">
+
+
+                    <!-- LOGO AFROLABORATÓRIO -->
+                   
+                    <div class="hero-logo-box">
+                        <a
+                            href="#"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            <img
+                                src="imagens/logogalp.jpeg"
+                                alt="Logo do Instituto Socioeducativo Afrolaboratório"
+                            >
+                        </a>
+                    </div>
+
+                    <!-- LOGO ESCOLA TIO TRAMPO -->
+                    
+                    <div class="hero-logo-box tio-trampo">
+                        <a
+                            href="#"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            <img
+                                src="imagens/logoescola.jpeg"
+                                alt="Logo da Escola de Graffiti e Artes Visuais Tio Trampo"
+                            >
+                        </a>
+                    </div>
+
+                    <!-- LOGO / ESPAÇO 03 -->
+                  
+                    <div class="hero-logo-box logo-placeholder">
+                        <a
+                            href="#"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            <img
+                                src= "imagens/logohiphoptv.jpeg"
+                                alt="logohiphoptv"
+                            >
+                        </a>
+                    </div>
+
+                    <!-- LOGO / ESPAÇO 04 -->
+                    
+                    <div class="hero-logo-box logo-placeholder">
+                        <a
+                            href="#"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            <img
+                                src="imagens/logoinstituto.jpeg"
+                                alt="logoinstituto"
+                            >
+                        </a>
+                    </div>
+
+                    <!-- LOGO / ESPAÇO 05 -->
+                    
+                    <div class="hero-logo-box logo-placeholder">
+                        <a
+                            href="#"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            <img
+                                src="imagens/logobloco.jpeg"
+                                alt="logobloco"
+                            >
+                        </a>
+                    </div>
+
+                </div>
+
+
+                <div class="hero-tag">
+
+                    Cultura • Arte • Educação
+
+                </div>
+
+
+                <h1>
+
+                    A arte<br>
+
+                    <span>transforma</span><br>
+
+                    territórios.
+
+                </h1>
+
+
+                <p class="hero-description">
+
+                    O Instituto Socioeducativo Afrolaboratório conecta
+                    cultura negra, arte urbana, educação e economia
+                    criativa para fortalecer pessoas, comunidades e
+                    territórios.
+
+                    <br><br>
+
+                    Em sua rede de espaços, reúne a
+                    <strong>Escola de Graffiti e Artes Visuais Tio Trampo</strong>,
+                    galpão cultural, oficinas de podcast e estúdio musical.
+
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="#escola"
+                        class="btn"
+                    >
+                        Conheça a Escola
+                    </a>
+
+
+                    <a
+                        href="#oficinas"
+                        class="btn btn-dark"
+                    >
+                        Oficinas
+                    </a>
+
+                    <a
+                        href="#espacos"
+                        class="btn btn-dark"
+                    >
+                        Conheça nossos espaços
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             TICKER
+             ===================================================== -->
+
+        <div class="ticker">
+
+            <div class="ticker-content">
+
+                <span>
+                    ARTE URBANA ✦ CULTURA NEGRA ✦ EDUCAÇÃO ✦
+                </span>
+
+                <span>
+                    GRAFFITI ✦ ARTES VISUAIS ✦ PODCAST ✦ MÚSICA ✦
+                </span>
+
+                <span>
+                    ECONOMIA CRIATIVA ✦ TERRITÓRIO ✦ AFROFUTURO ✦
+                </span>
+
+                <span>
+                    ARTE URBANA ✦ CULTURA NEGRA ✦ EDUCAÇÃO ✦
+                </span>
+
+                <span>
+                    GRAFFITI ✦ ARTES VISUAIS ✦ PODCAST ✦ MÚSICA ✦
+                </span>
+
+                <span>
+                    ECONOMIA CRIATIVA ✦ TERRITÓRIO ✦ AFROFUTURO ✦
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             SOBRE
+             ===================================================== -->
+
+        <section
+            class="sobre"
+            id="sobre"
+        >
+
+            <div class="container">
+
+
+                <div class="section-header reveal">
+
+                    <div class="section-number">
+                        01 / O Instituto
+                    </div>
+
+                    <h2 class="section-title">
+
+                        Cultura que<br>
+
+                        <span>movimenta.</span>
+
+                    </h2>
+
+                </div>
+
+
+                <div class="sobre-grid">
+
+
+                    <div class="sobre-texto reveal">
+
+                        <p>
+
+                            O Instituto Socioeducativo Afrolaboratório
+                            é uma organização de Porto Alegre voltada
+                            para a valorização da cultura negra,
+                            arte urbana, educação e economia criativa.
+
+                        </p>
+
+
+                        <p>
+
+                            Através de ações culturais, educativas e
+                            artísticas, o instituto cria espaços para
+                            expressão, formação, criação e transformação
+                            social.
+
+                        </p>
+
+
+                        <p>
+
+                            O território é parte fundamental desse
+                            processo: a arte ocupa as ruas, aproxima
+                            pessoas e cria novas possibilidades.
+
+                        </p>
+
+
+                        <p>
+
+                            O projeto também atua na formação de novos
+                            artistas, produtores e comunicadores,
+                            utilizando o graffiti, as artes visuais,
+                            o podcast e a música como ferramentas
+                            de expressão e transformação.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="sobre-destaque reveal">
+
+                        <div class="decorative-letter">
+                            A
+                        </div>
+
+                        <h3>
+
+                            Arte negra.<br>
+                            Arte urbana.<br>
+                            Arte viva.
+
+                        </h3>
+
+
+                        <p>
+
+                            Um espaço para criar, aprender,
+                            compartilhar conhecimento e fortalecer
+                            a produção cultural periférica.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             ESCOLA TIO TRAMPO
+             ===================================================== -->
+
+        <section
+            class="escola"
+            id="escola"
+        >
+
+            <div class="container">
+
+
+                <div class="section-header reveal">
+
+                    <div class="section-number">
+                        02 / Formação
+                    </div>
+
+                    <h2 class="section-title">
+
+                        Escola<br>
+
+                        <span>Tio Trampo.</span>
+
+                    </h2>
+
+                </div>
+
+
+                <div class="escola-grid">
+
+
+                    <div class="escola-card reveal">
+
+                        <div>
+
+                            <h3>
+
+                                Graffiti<br>
+                                & Artes<br>
+                                Visuais
+
+                            </h3>
+
+
+                            <p>
+
+                                Inaugurada em julho de 2026,
+                                a Escola de Graffiti e Artes
+                                Visuais Tio Trampo nasce como
+                                um espaço de formação,
+                                experimentação e criação artística
+                                no Morro da Cruz.
+
+                            </p>
+
+                        </div>
+
+
+                        <small>
+
+                            Morro da Cruz • Partenon • Porto Alegre
+
+                        </small>
+
+                    </div>
+
+
+                    <div class="escola-pattern pattern reveal">
+
+                        <!-- IMAGEM OPCIONAL DA ESCOLA
+                             colocar uma foto aqui <img src="imagens/escola-tio-trampo.jpg" alt="Escola Tio Trampo">
+                             -->
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    style="margin-top: 30px;"
+                    class="reveal"
+                >
+
+                    <p
+                        style="
+                        max-width:700px;
+                        color:#aaa;
+                        line-height:1.8;
+                        font-size:18px;
+                        "
+                    >
+
+                        O espaço também abriga a primeira galeria
+                        de arte da região, ampliando as possibilidades
+                        de circulação, exposição e valorização da
+                        produção artística local.
+
+                    </p>
+
+                </div>
+
+
+                <div
+                    style="margin-top:35px;"
+                    class="reveal"
+                >
+
+                    <a
+                        href="#"
+                        id="mapEscola"
+                        target="_blank"
+                        rel="noopener"
+                        class="btn"
+                    >
+                        Como chegar à Escola
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PROJETOS
+             ===================================================== -->
+
+        <section class="projetos" id="projetos">
+
+            <div class="container">
+
+                <div class="section-header reveal">
+
+                    <div class="section-number">
+                        03 / Projetos
+                    </div>
+
+                    <h2 class="section-title">
+                        Cultura em<br>
+                        <span>movimento.</span>
+                    </h2>
+
+                </div>
+
+                <div class="projetos-grid">
+
+                    <article class="projeto-card reveal">
+                        
+
+                        <img class="card-imagem" src="imagens/prodeventos222222.jpg" alt="Imagem do projeto">
+
+                        <div>
+                            <h3>Produção de Eventos</h3>
+                            <p>Produção, organização e realização de eventos culturais, artísticos e comunitários.</p>
+                        </div>
+                    </article>
+
+                    <article class="projeto-card reveal">
+                        
+                        <img class="card-imagem" src="imagens/workshops (1).jpg" alt="Imagem do projeto">
+
+                        <div>
+                            <h3>Workshops</h3>
+                            <p>Encontros formativos e experiências práticas voltadas à cultura, arte, comunicação e economia criativa.</p>
+                        </div>
+                    </article>
+
+                    <article class="projeto-card reveal">
+                        
+                        <img class="card-imagem" src="imagens/palestras.jpeg" alt="Imagem do projeto">
+
+                        <div>
+                            <h3>Palestras</h3>
+                            <p>Atuando quando necessário com palestras dentro do campo que o afrolab atua, estamos sempre preparados para trocar uma idéia mais séria.</p>
+                        </div>
+                    </article>
+
+                    <article class="projeto-card reveal">
+                        
+
+                        <img class="card-imagem" src="imagens/logohiphoptv.jpeg" alt="Imagem do projeto">
+
+                        <div>
+                            <h3>Hip Hop TV</h3>
+                            <p>Hip Hop TV
+
+Canal dedicado à produção audiovisual, à comunicação e à cultura Hip Hop, dando voz às histórias, aos artistas e às vivências do território.
+
+Um espaço para registrar, fortalecer e compartilhar as narrativas da quebrada, valorizando 
+a cultura, a criatividade e as diferentes expressões que nascem do nosso território.</p>
+                        </div>
+                    </article>
+
+                    <article class="projeto-card reveal">
+                        
+
+                        <img class="card-imagem" src="imagens/logoGTP.jpeg" alt="Imagem do projeto">
+
+                        <div>
+                            <h3>Serigrafia GTP Store</h3>
+                            <p>
+
+Produção em serigrafia, impressão DTF, produtos junto do galpão cultural, criações e ações da GTP Store, uma marca criada na quebrada e construída a partir da nossa vivência, criatividade, identidade e resistência.
+
+Da quebrada para o mundo, fortalecendo a produção local, a arte e quem faz acontecer no nosso território.
+
+Nos siga no Instagram e fortaleça nosso trampo!
+</p>
+                        </div>
+                    </article>
+
+                    <article class="projeto-card reveal">
+                        
+                        <img class="card-imagem" src="imagens/blocodaspreeee.jpeg" alt="Imagem do projeto">
+
+                        <div>
+                            <h3>Bloco das Pretas</h3>
+                            <p>Há 6 anos, o Bloco das Pretas fortalece os vínculos entre mulheres periféricas e pretas através da música, da cultura e da ocupação dos nossos espaços.
+
+O bloco vem ganhando força e conquistando seu espaço na quebrada, no carnaval e nas ruas, celebrando a potência, a identidade e a resistência das nossas guerreiras.
+
+É música, é cultura, é resistência.
+É a voz das mulheres pretas ocupando, criando e transformando.
+                            </p></p>
+                        </div>
+                    </article>
+
+                    
+                    </article>
+
+                   
+
+                </div>
+
+                
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             OFICINAS
+             ===================================================== -->
+
+        <section class="oficinas" id="oficinas">
+
+            <div class="container">
+
+                <div class="section-header reveal">
+
+                    <div class="section-number">
+                        04 / Oficinas
+                    </div>
+
+                    <h2 class="section-title">
+                        Aprender.<br>
+                        <span>Criar. Compartilhar.</span>
+                    </h2>
+
+                </div>
+
+                <div class="oficinas-grid">
+
+                    <article class="oficina-card reveal" id="oficina-dj">
+                        
+                        <img class="card-imagem" src="imagens/oficinaDj.jpeg" alt="Foto da oficina">
+
+                        <h3>DJ</h3>
+                        
+                    </article>
+
+                    <article class="oficina-card reveal" id="oficina-capoeira">
+                        
+                        <img class="card-imagem" src="imagens/capoeira.jpeg" alt="Foto da oficina">
+
+                        <h3>Capoeira</h3>
+                        <p></p>
+                    </article>
+
+                    <article class="oficina-card reveal" id="oficina-violao">
+                        
+                        <img class="card-imagem" src="imagens/violaoofc.jpg" alt="Foto da oficina">
+
+                        <h3>Violão</h3>
+                        <p></p>
+                    </article>
+
+                    <article class="oficina-card reveal" id="oficina-mc">
+                        
+                        <img class="card-imagem" src="imagens/ofcmc.jpeg" alt="Foto da oficina">
+
+                        <h3>MC</h3>
+                        <p>
+                
+                        </p>
+                    </article>
+
+                    <article class="oficina-card reveal" id="oficina-alfabetizacao-digital">
+                        
+                        <img class="card-imagem" src="imagens/afabDigital.jpg" alt="Foto da oficina">
+
+                        <h3>Alfabetização Digital</h3>
+                        <p></p>
+                    </article>
+
+                    <article class="oficina-card reveal" id="oficina-danca">
+                        
+                        <img class="card-imagem" src="imagens/dançaedu.jpeg" alt="Foto da oficina">
+
+                        <h3>Dança</h3>
+                        <p></p>
+                    </article>
+
+                    <article class="oficina-card reveal" id="oficina-graffiti">
+                        
+                        <img class="card-imagem" src="imagens/imgofgrafitti.jpg" alt="Foto da oficina">
+
+                        <h3>Graffiti</h3>
+                        <p></p>
+                    </article>
+
+                    <article class="oficina-card reveal" id="oficina-fotografia">
+                        
+                        <img class="card-imagem" src="imagens/oficina fotografia aula inaugural escola de grafiiti-59.jpg" alt="Foto da oficina">
+
+                        <h3>Fotografia</h3>
+                        <p></p>
+                    </article>
+
+                    <article class="oficina-card reveal" id="oficina-podcast">
+                        
+                        <img class="card-imagem" src="imagens/podcast.jpeg" alt="Foto da oficina">
+
+                        <h3>Podcast</h3>
+                        <p></p>
+                    </article>
+
+                    <article class="oficina-card reveal" id="oficina-trombone">
+                        
+                        <img class="card-imagem" src="imagens/trombone.jpg" alt="Foto da oficina">
+
+                        <h3>Trombone</h3>
+                        <p></p>
+                    </article>
+
+                    <article class="oficina-card reveal" id="oficina-trompete">
+                        
+
+                        <img class="card-imagem" src="imagens/trompete.jpg" alt="Foto da oficina">
+
+                        <h3>Trompete</h3>
+                        <p></p>
+                    </article>
+
+                    <article class="oficina-card reveal" id="oficina-breaking">
+                        <!-- TROQUE SOMENTE O src ABAIXO PELA FOTO DA OFICINA. -->
+                        <img class="card-imagem" src="imagens/breakofn.jpeg" alt="Foto da oficina">
+
+                        <h3>Breaking</h3>
+                        <p></p>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             INTEGRANTES AFROLAB
+             ===================================================== -->
+
+        <section class="integrantes" id="integrantes">
+
+            <div class="container">
+
+                <div class="section-header reveal">
+
+                    <div class="section-number">
+                        05 / Integrantes Afrolab
+                    </div>
+
+                    <h2 class="section-title">
+                        Quem faz<br>
+                        <span>acontecer.</span>
+                    </h2>
+
+                </div>
+
+                <div class="integrantes-grid">
+
+                    <article class="integrante-card reveal">
+                        <div class="integrante-foto">
+
+                            <!-- TROQUE SOMENTE O src ABAIXO PELA SUA FOTO. -->
+                            <img src="imagens/ge.jpeg" alt="Foto do integrante 01">
+
+                        </div>
+                        <div class="integrante-info">
+                            <h3>Getri</h3>
+                            <p>Coordenador
+de Artes Visuais e Arte-Educador
+de Muralismo. Coordenador da
+Escola de Graffiti e Artes Visuais
+Tio Trampo
+Grafiteiro, artista visual e
+ativista
+urbano
+com
+sólida
+carreira no cenário da street art
+gaúcha. É o principal instrutor e
+articulador da Escola de Graffiti
+Tio Trampo, onde leciona história
+da arte urbana, técnicas de spray,
+desenho, stencil e pintura em
+grandes
+formatos
+para
+a
+transformação
+estética
+de
+territórios vulnerabilizados.</p>
+                        </div>
+                    </article>
+
+                    <article class="integrante-card reveal">
+                        <div class="integrante-foto">
+
+                            
+                            <img src="imagens/jaque.jpg" alt="Negra Jaque">
+
+                        </div>
+                        <div class="integrante-info">
+                            <h3>Negra Jaque</h3>
+                            <p>Diretora
+Executiva, Coordenadora Geral e
+Gestora de Projetos.
+Atua no planejamento
+estratégico,
+captação,
+relacionamento institucional e
+fiscalização da execução físico-
+financeira das propostas. Sua
+trajetória envolve a produção de
+festivais, o lançamento de álbuns
+musicais independentes e o
+agenciamento
+de
+carreiras
+artísticas periféricas.</p>
+                        </div>
+                    </article>
+
+                    <article class="integrante-card reveal">
+                        <div class="integrante-foto">
+
+                            
+                            <img src="imagens/stif(1).png" alt="Foto do integrante 03">
+
+                        </div>
+                        <div class="integrante-info">
+                            <h3>Mateus Stif</h3>
+                            <p>Coordenador
+Mateus Stif é artista, produtor musical, fotógrafo, diretor audiovisual e educador. Atua há mais de 15 anos na cultura Hip Hop, desenvolvendo trabalhos ligados à música, audiovisual, fotografia e formação de jovens. No Galpão Cultural Casa de Hip Hop, integra a equipe como coordenador de audiovisual e professor de MC, contribuindo na comunicação, registro, formação e realização de projetos culturais.</p>
+                        </div>
+                    </article>
+
+                    <article class="integrante-card reveal">
+                        <div class="integrante-foto">
+
+                            
+                            <img src="imagens/edu.jpeg" alt="">
+
+                        </div>
+                        <div class="integrante-info">
+                            <h3>Eduardo Angel's</h3>
+                            <p>Coordenador do Charminho do Galpão.
+ Artista, educador e dançarino, desenvolve no Galpão Cultural o Charminho do Galpão, grupo infantil dedicado à Dança Charme e aos passinhos sociais.
+A dança é utilizada como ferramenta de expressão, convivência, valorização da cultura negra e fortalecimento da identidade.
+ Aproximando crianças e diferentes gerações através da cultura.
+Uma iniciativa pioneira na vivência da Dança Charme com crianças.
+No Galpão, o Charminho transforma dança em encontro, identidade e pertencimento.
+</p>
+                        </div>
+                    </article>
+
+                    <article class="integrante-card reveal">
+                        <div class="integrante-foto">
+
+                            
+                            <img src="imagens/ita.jpg" alt="Foto do integrante 05">
+
+                        </div>
+                        <div class="integrante-info">
+                            <h3>DJ ITA</h3>
+                            <p>DJ Residente e oficineiro no Afrolaboratório
+                                Com uma trajetória de mais de 10 anos na Cultura Hip Hop e no cenário musical gaúcho, DJ Ita, natural de Alvorada (RS), iniciou sua aproximação com eventos musicais em 2013, também na cidade de Alvorada (RS).
+Por meio de suas pesquisas musicais, DJ Ita constrói sets que transitam entre Rap, Reggae, MPB, Samba e outras vertentes da Black Music, conectando tradição, identidade.</p>
+                        </div>
+                    </article>
+
+                    <article class="integrante-card reveal">
+                        <div class="integrante-foto">
+
+                            
+                            <img src="imagens/taci.jpeg" alt="taci">
+
+                        </div>
+                        <div class="integrante-info">
+                            <h3>Taci nunes</h3>
+                            <p>Mestra de
+Bateria e Coordenadora de
+Percussão.
+Musicista e regente com
+ampla
+vivência
+em
+blocos
+carnavalescos e manifestações de
+cultura popular. Lidera os arranjos
+percussivos, as oficinas de ritmos
+afro-brasileiros e o treinamento
+técnico de ritmistas, promovendo
+a integração comunitária através
+do tambor e da preservação do
+patrimônio imaterial.</p>
+                        </div>
+                    </article>
+
+                    <article class="integrante-card reveal">
+                        <div class="integrante-foto">
+
+                            
+                            <img src="imagens/lucas.jpeg" alt="Foto do integrante 07">
+
+                        </div>
+                        <div class="integrante-info">
+                            <h3>LUCAS BARROS</h3>
+                            <p>Produtor Cultural, Professor de Violão e Técnico de Palco. Educador e agente cultural com trajetória iniciada em 2008, a partir de projetos de inclusão social e descentralização da cultura. Atua na formação de jovens, produção cultural e musical, oficinas de violão e produção de eventos, com experiência em grandes festivais, saraus e iniciativas culturais. Desenvolve seu trabalho a partir da cultura e da educação como ferramentas de transformação social, buscando ampliar oportunidades e perspectivas para jovens de periferia.</p>
+                        </div>
+                    </article>
+
+                    <article class="integrante-card reveal">
+                        <div class="integrante-foto">
+
+                            
+                            <img src="imagens/gui.jpeg" alt="Foto do integrante 08">
+
+                        </div>
+                        <div class="integrante-info">
+                            <h3>GUILHERME</h3>
+                            <p>Instrutor e Coordenador de Alfabetização Digital.
+                                  Técnico e educador com foco em inclusão sociodigital e tecnologia comunitária. Atua na capacitação de jovens e adultos para o uso consciente e profissional de ferramentas de informática, edição básica e inserção no mercado digital, 
+                                integrando a tecnologia como ferramenta de emancipação.</p>
+                        </div>
+                    </article>
+
+                    <!-- INTEGRANTE 09 -->
+                    
+                    <article class="integrante-card reveal">
+                        <div class="integrante-foto">
+
+                            <img src="imagens/italoeduc.jpeg" alt="Foto do integrante 09">
+
+                        </div>
+                        <div class="integrante-info">
+                            <h3>ítalo soares</h3>
+                            <p>Professor de Capoeira e
+Saberes Tradicionais.
+Educador físico e
+capoeirista
+dedicado
+à
+salvaguarda da capoeira como
+patrimônio
+cultural
+imaterial.
+Ministra aulas de movimentação
+corporal, musicalidade tradicional,
+história da resistência negra e
+fortalecimento da cidadania por
+meio da disciplina e filosofia da
+roda.</p>
+                        </div>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             NOSSOS ESPAÇOS
+             ===================================================== -->
+
+        <section
+            class="espacos"
+            id="espacos"
+        >
+
+            <div class="container">
+
+
+                <div class="section-header reveal">
+
+                    <div class="section-number">
+                        06 / Nossos espaços
+                    </div>
+
+                    <h2 class="section-title">
+
+                        Três espaços.<br>
+
+                        <span>Um movimento.</span>
+
+                    </h2>
+
+                </div>
+
+
+                <div class="espacos-grid">
+
+
+                    <!-- ESCOLA -->
+
+                    <article class="espaco-card reveal">
+                        
+                        <img class="card-imagem" src="imagens/escolatio.jpg" alt="Foto do espaço">
+
+                        <div>
+
+                            <div class="espaco-numero">
+                                01
+                            </div>
+
+                            <h3>
+                                Escola Tio Trampo
+                            </h3>
+
+                            <p>
+
+                                Escola de Graffiti e Artes Visuais,
+                                formação artística e primeira galeria
+                                de arte da região.
+
+                            </p>
+
+                        </div>
+
+
+                        <div>
+
+                            <div class="espaco-endereco">
+
+                                RUA 9 DE JUNHO, 878<br>
+                                MORRO DA CRUZ — PARTENON<br>
+                                PORTO ALEGRE — RS
+
+                            </div>
+
+
+                            <a
+                                href="#"
+                                id="mapEscolaCard"
+                                target="_blank"
+                                rel="noopener"
+                                class="btn"
+                            >
+                                Ver localização
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- GALPÃO -->
+
+                    <article class="espaco-card reveal">
+                        
+                        <img class="card-imagem" src="imagens/endgalpao.jpeg" alt="Foto do espaço">
+
+                        <div>
+
+                            <div class="espaco-numero">
+                                02
+                            </div>
+
+                            <h3>
+                                Galpão Afrolab
+                            </h3>
+
+                            <p>
+
+                                Espaço cultural e de convivência
+                                do Instituto Afrolaboratório,
+                                dedicado às ações, encontros,
+                                arte e atividades comunitárias.
+
+                            </p>
+
+                        </div>
+
+
+                        <div>
+
+                            <div class="espaco-endereco">
+
+                                RUA SÃO GUILHERME, 619<br>
+                                MORRO DA CRUZ — PARTENON<br>
+                                PORTO ALEGRE — RS
+
+                            </div>
+
+
+                            <a
+                                href="#"
+                                id="mapGalpao"
+                                target="_blank"
+                                rel="noopener"
+                                class="btn"
+                            >
+                                Ver localização
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- ESCRITÓRIO -->
+
+                    <article class="espaco-card reveal">
+                        <!-- TROQUE SOMENTE O src ABAIXO PELA FOTO DO ESPAÇO. -->
+                        <img class="card-imagem" src="imagens/escritoriopodcst.jpg" alt="Foto do espaço">
+
+                        <div>
+
+                            <div class="espaco-numero">
+                                03
+                            </div>
+
+                            <h3>
+                                Escritório<br>
+                                Administrativo
+                            </h3>
+
+                            <p>
+
+                                Espaço administrativo no Centro
+                                Histórico, onde também funcionam
+                                oficinas de podcast e o estúdio
+                                musical.
+
+                            </p>
+
+                        </div>
+
+
+                        <div>
+
+                            <div class="espaco-endereco">
+
+                                TRAVESSA ENGENHEIRO ACILINO<br>
+                                DE CARVALHO, 21<br>
+                                CENTRO HISTÓRICO<br>
+                                PORTO ALEGRE — RS<br>
+                                90010-200
+
+                            </div>
+
+
+                            <a
+                                href="#"
+                                id="mapEscritorio"
+                                target="_blank"
+                                rel="noopener"
+                                class="btn"
+                            >
+                                Ver localização
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             GALERIA
+             ===================================================== -->
+
+        <section
+            class="galeria"
+            id="galeria"
+        >
+
+            <div class="container">
+
+
+                <div class="section-header reveal">
+
+                    <div class="section-number">
+                        07 / Galeria
+                    </div>
+
+                    <h2 class="section-title">
+
+                        O território<br>
+
+                        <span>em imagens.</span>
+
+                    </h2>
+
+                </div>
+
+
+                <div class="galeria-grid">
+
+
+                    <div class="foto reveal">
+
+                        <img src="imagens/galeriagrafitti.jpg" alt="Graffiti">
+
+                        <div class="foto-legenda">
+                            Graffiti
+                        </div>
+
+                    </div>
+
+
+                    <div class="foto reveal">
+
+                        <img src="imagens/formação0.jpeg" alt="Formação">
+
+                        <div class="foto-legenda">
+                            Formação
+                        </div>
+
+                    </div>
+
+
+                    <div class="foto reveal">
+
+                        <img src="imagens/galeriabloco.jpg" alt="Arte urbana">
+
+                        <div class="foto-legenda">
+                            Arte
+                        </div>
+
+                    </div>
+
+
+                    <div class="foto reveal">
+
+                        <img src="imagens/oficina.jpeg" alt="Oficina">
+
+                        <div class="foto-legenda">
+                            Oficina
+                        </div>
+
+                    </div>
+
+
+                    <div class="foto reveal">
+
+                        <img src="imagens/gaelria.jpeg" alt="Galeria">
+
+                        <div class="foto-legenda">
+                            Galeria
+                        </div>
+
+                    </div>
+
+
+                    <div class="foto reveal">
+
+                        <img src="imagens/comunidade.jpg" alt="Comunidade">
+
+                        <div class="foto-legenda">
+                            Comunidade
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CONTATO
+             ===================================================== -->
+
+        <section
+            class="contato"
+            id="contato"
+        >
+
+            <div class="container">
+
+
+                <div class="contato-grid">
+
+
+                    <div class="reveal">
+
+                        <div class="section-number">
+                            08 / Conecte-se
+                        </div>
+
+
+                        <h2>
+
+                            Fala<br>
+
+                            <span>com a gente.</span>
+
+                        </h2>
+
+                    </div>
+
+
+                    <div class="contatos-links reveal">
+
+
+                        <!-- WHATSAPP -->
+
+                        <a
+                            href="#"
+                            id="whatsappLink"
+                            class="contato-link"
+                            target="_blank"
+                            rel="noopener"
+                        >
+
+                            <span>
+                                WhatsApp
+                            </span>
+
+                            <span>
+                                ↗
+                            </span>
+
+                        </a>
+
+
+                        <!-- INSTAGRAM -->
+
+                        <a
+                            href="#"
+                            id="instagramLink"
+                            class="contato-link"
+                            target="_blank"
+                            rel="noopener"
+                        >
+
+                            <span>
+                                Instagram
+                            </span>
+
+                            <span>
+                                ↗
+                            </span>
+
+                        </a>
+
+
+                        <!-- TELEFONE -->
+
+                        <a
+                            href="#"
+                            id="telefoneLink"
+                            class="contato-link"
+                        >
+
+                            <span>
+                                Telefone
+                            </span>
+
+                            <span>
+                                (51) 99276-4631
+                            </span>
+
+                        </a>
+
+
+                        <!-- MAPA -->
+
+                        <a
+                            href="#"
+                            id="mapLink"
+                            class="contato-link"
+                            target="_blank"
+                            rel="noopener"
+                        >
+
+                            <span>
+                                Como chegar
+                            </span>
+
+                            <span>
+                                ↗
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             ENDEREÇO DA ESCOLA
+             ===================================================== -->
+
+        <section class="endereco">
+
+            <div class="container">
+
+
+                <div class="endereco-box">
+
+
+                    <div class="endereco-info reveal">
+
+                        <div class="section-number">
+                            Escola Tio Trampo
+                        </div>
+
+
+                        <h3>
+
+                            Morro<br>
+                            da Cruz.
+
+                        </h3>
+
+
+                        <p>
+
+                            <strong>
+                                Escola de Graffiti e Artes Visuais Tio Trampo
+                            </strong>
+
+                            <br><br>
+
+                            Rua 9 de Junho, 878<br>
+                            Morro da Cruz — Partenon<br>
+                            Porto Alegre — RS
+
+                        </p>
+
+
+                        <a
+                            href="#"
+                            id="mapButton"
+                            target="_blank"
+                            rel="noopener"
+                            class="btn"
+                        >
+                            Abrir no Google Maps
+                        </a>
+
+                    </div>
+
+
+                    <div class="mapa reveal">
+
+                        <div class="mapa-conteudo">
+
+                            <strong>
+                                878
+                            </strong>
+
+                            Rua 9 de Junho
+
+                            <br>
+
+                            Escola Tio Trampo
+
+                            <br>
+
+                            Morro da Cruz — Partenon
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             GALPÃO
+             ===================================================== -->
+
+        <section class="administrativo">
+
+            <div class="container">
+
+
+                <div class="administrativo-box">
+
+
+                    <div class="reveal">
+
+                        <div class="section-number">
+                            Galpão Afrolaboratório
+                        </div>
+
+
+                        <h2>
+
+                            Arte que<br>
+
+                            <span>ocupa.</span>
+
+                        </h2>
+
+
+                        <p
+                            class="administrativo-texto"
+                            style="margin-top:30px;"
+                        >
+
+                            O Galpão Afrolaboratório é um dos espaços
+                            de encontro, produção e circulação cultural
+                            do projeto no Morro da Cruz.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="reveal">
+
+                        <div class="administrativo-endereco">
+
+                            <strong>
+
+                                RUA SÃO GUILHERME, 619
+
+                            </strong>
+
+                            <br>
+
+                            Morro da Cruz — Partenon<br>
+                            Porto Alegre — RS
+
+                            <br><br>
+
+                            Espaço cultural, artístico e comunitário
+                            do Instituto Afrolaboratório.
+
+                            <br><br>
+
+                            <a
+                                href="#"
+                                id="mapGalpaoButton"
+                                class="btn"
+                                target="_blank"
+                                rel="noopener"
+                            >
+                                Como chegar
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             ESCRITÓRIO / PODCAST / ESTÚDIO
+             ===================================================== -->
+
+        <section
+            class="sobre"
+            id="escritorio"
+        >
+
+            <div class="container">
+
+
+                <div class="section-header reveal">
+
+                    <div class="section-number">
+                        Escritório Administrativo
+                    </div>
+
+                    <h2 class="section-title">
+
+                        Voz.<br>
+
+                        <span>Música. Comunicação.</span>
+
+                    </h2>
+
+                </div>
+
+
+                <div class="sobre-grid">
+
+
+                    <div class="sobre-texto reveal">
+
+                        <p>
+
+                            O escritório administrativo do
+                            Afrolaboratório funciona no Centro Histórico
+                            de Porto Alegre e amplia a atuação do projeto
+                            para além das artes visuais.
+
+                        </p>
+
+
+                        <p>
+
+                            No espaço também são realizadas
+                            <strong>oficinas de podcast</strong>,
+                            criando oportunidades para formação,
+                            comunicação e produção de conteúdo.
+
+                        </p>
+
+
+                        <p>
+
+                            O local abriga ainda um
+                            <strong>estúdio musical</strong>,
+                            fortalecendo a produção sonora e dando
+                            suporte para artistas e iniciativas
+                            culturais.
+
+                        </p>
+
+
+                        <div class="administrativo-destaques">
+
+                            <span class="tag">
+                                Podcast
+                            </span>
+
+                            <span class="tag">
+                                Estúdio Musical
+                            </span>
+
+                            <span class="tag">
+                                Formação
+                            </span>
+
+                            <span class="tag">
+                                Comunicação
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="sobre-destaque reveal">
+
+                        <div class="decorative-letter">
+                            M
+                        </div>
+
+
+                        <h3>
+
+                            Música.<br>
+                            Voz.<br>
+                            Território.
+
+                        </h3>
+
+
+                        <p>
+
+                            Um espaço para produzir, aprender,
+                            comunicar e transformar ideias em
+                            som e conteúdo.
+
+                        </p>
+
+
+                        <div
+                            class="administrativo-endereco"
+                            style="
+                            box-shadow:none;
+                            margin-top:30px;
+                            "
+                        >
+
+                            <strong>
+
+                                Travessa Engenheiro Acilino
+                                de Carvalho, 21
+
+                            </strong>
+
+                            <br>
+
+                            Centro Histórico<br>
+                            Porto Alegre — RS<br>
+                            CEP 90010-200
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         FOOTER
+         ========================================================= -->
+
+    <footer>
+
+        <div class="container">
+
+
+            <div class="footer-grid">
+
+
+                <div>
+
+                    <div class="footer-logo">
+                        AFROLAB
+                    </div>
+
+
+                    <p>
+
+                        Instituto Socioeducativo Afrolaboratório.
+
+                        Cultura negra, arte urbana, educação,
+                        graffiti, artes visuais, podcast e
+                        música em movimento.
+
+                    </p>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>
+                        Navegação
+                    </h4>
+
+
+                    <a href="#sobre">
+                        O Instituto
+                    </a>
+
+
+                    <a href="#escola">
+                        Escola Tio Trampo
+                    </a>
+
+                    <a href="#projetos">
+                        Projetos
+                    </a>
+
+                    <a href="#oficinas">
+                        Oficinas
+                    </a>
+
+                    <a href="#integrantes">
+                        Integrantes Afrolab
+                    </a>
+
+
+                    <a href="#espacos">
+                        Nossos espaços
+                    </a>
+
+
+                    <a href="#galeria">
+                        Galeria
+                    </a>
+
+
+                    <a href="#contato">
+                        Contato
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>
+                        Conecte-se
+                    </h4>
+
+
+                    <a
+                        href="#"
+                        id="footerWhatsapp"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        WhatsApp
+                    </a>
+
+
+                    <a
+                        href="#"
+                        id="footerInstagram"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        Instagram
+                    </a>
+
+
+                    <a href="#escola">
+                        Escola Tio Trampo
+                    </a>
+
+
+                    <a href="#escritorio">
+                        Podcast e Estúdio Musical
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="copyright">
+
+                © 2026 Instituto Socioeducativo Afrolaboratório.
+                Todos os direitos reservados.
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+         ========================================================= -->
+
+    <script>
+
+
+        /* =========================================================
+           DADOS DO PROJETO
+
+           EDITE SOMENTE ESTA PARTE CASO PRECISE ALTERAR
+           TELEFONE, INSTAGRAM OU ENDEREÇOS.
+           ========================================================= */
+
+
+        const dados = {
+
+
+            /* TELEFONE / WHATSAPP
+
+               Número em formato internacional:
+
+               Brasil = 55
+               DDD Porto Alegre = 51
+
+               Número:
+               99276-4631
+
+               Resultado:
+               5551992764631
+            */
+
+            telefone: "5551992764631",
+
+
+            /* INSTAGRAM */
+
+            instagram:
+                "https://www.instagram.com/afrolaboratoriobr?igsi=MXRiZzNrd3FwcGVlNQ==",
+
+
+            /* MENSAGEM AUTOMÁTICA DO WHATSAPP */
+
+            whatsappMensagem:
+                "Olá! Gostaria de saber mais sobre o Instituto Afrolaboratório.",
+
+
+            /* =====================================================
+               ENDEREÇOS
+               ===================================================== */
+
+
+            escola:
+
+                "Rua 9 de Junho, 878, Morro da Cruz, Partenon, Porto Alegre, RS",
+
+
+            galpao:
+
+                "Rua São Guilherme, 619, Morro da Cruz, Partenon, Porto Alegre, RS",
+
+
+            escritorio:
+
+                "Travessa Engenheiro Acilino de Carvalho, 21, Centro Histórico, Porto Alegre, RS, 90010-200, Brasil"
+
+        };
+
+
+
+        /* =========================================================
+           WHATSAPP
+           ========================================================= */
+
+
+        const whatsappURL =
+
+            "https://wa.me/" +
+
+            dados.telefone +
+
+            "?text=" +
+
+            encodeURIComponent(
+                dados.whatsappMensagem
+            );
+
+
+
+        document.getElementById(
+            "whatsappLink"
+        ).href = whatsappURL;
+
+
+        document.getElementById(
+            "footerWhatsapp"
+        ).href = whatsappURL;
+
+
+
+        /* =========================================================
+           TELEFONE
+           ========================================================= */
+
+
+        const telefoneURL =
+
+            "tel:+" +
+
+            dados.telefone;
+
+
+        document.getElementById(
+            "telefoneLink"
+        ).href = telefoneURL;
+
+
+
+        /* =========================================================
+           INSTAGRAM
+           ========================================================= */
+
+
+        document.getElementById(
+            "instagramLink"
+        ).href = dados.instagram;
+
+
+        document.getElementById(
+            "footerInstagram"
+        ).href = dados.instagram;
+
+
+
+        /* =========================================================
+           MAPAS
+           ========================================================= */
+
+
+        function criarMapa(endereco) {
+
+            return (
+
+                "https://www.google.com/maps/search/?api=1&query=" +
+
+                encodeURIComponent(endereco)
+
+            );
+
+        }
+
+
+        const mapaEscola =
+            criarMapa(dados.escola);
+
+
+        const mapaGalpao =
+            criarMapa(dados.galpao);
+
+
+        const mapaEscritorio =
+            criarMapa(dados.escritorio);
+
+
+
+        /* ESCOLA */
+
+        document.getElementById(
+            "mapEscola"
+        ).href = mapaEscola;
+
+
+        document.getElementById(
+            "mapEscolaCard"
+        ).href = mapaEscola;
+
+
+        document.getElementById(
+            "mapButton"
+        ).href = mapaEscola;
+
+
+
+        /* GALPÃO */
+
+        document.getElementById(
+            "mapGalpao"
+        ).href = mapaGalpao;
+
+
+        document.getElementById(
+            "mapGalpaoButton"
+        ).href = mapaGalpao;
+
+
+
+        /* ESCRITÓRIO */
+
+        document.getElementById(
+            "mapEscritorio"
+        ).href = mapaEscritorio;
+
+
+
+        /* =========================================================
+           MAPA PRINCIPAL DO CONTATO
+           =========================================================
+
+           
+
+
+        document.getElementById(
+            "mapLink"
+        ).href = mapaEscola;
+
+
+
+        /* =========================================================
+           MENU MOBILE
+           ========================================================= */
+
+
+        const menuButton =
+            document.getElementById(
+                "menuButton"
+            );
+
+
+        const menu =
+            document.getElementById(
+                "menu"
+            );
+
+
+        menuButton.addEventListener(
+            "click",
+            function () {
+
+                menu.classList.toggle(
+                    "active"
+                );
+
+            }
+        );
+
+
+
+        /* FECHA O MENU AO CLICAR */
+
+        document
+            .querySelectorAll(".menu a")
+            .forEach(
+                function (link) {
+
+                    link.addEventListener(
+                        "click",
+                        function () {
+
+                            menu.classList.remove(
+                                "active"
+                            );
+
+                        }
+                    );
+
+                }
+            );
+
+
+
+        /* =========================================================
+           ANIMAÇÃO AO ROLAR
+           ========================================================= */
+
+
+        const elementos =
+            document.querySelectorAll(
+                ".reveal"
+            );
+
+
+        const observer =
+            new IntersectionObserver(
+
+                function (entries) {
+
+                    entries.forEach(
+                        function (entry) {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                entry.target.classList.add(
+                                    "active"
+                                );
+
+                            }
+
+                        }
+                    );
+
+                },
+
+                {
+                    threshold: 0.15
+                }
+
+            );
+
+
+        elementos.forEach(
+            function (elemento) {
+
+                observer.observe(
+                    elemento
+                );
+
+            }
+        );
+
+
+
+        /* =========================================================
+           CONSOLE
+           ========================================================= */
+
+        console.log(
+            "Afrolaboratório — site carregado."
+        );
+
+        console.log(
+            "WhatsApp:",
+            dados.telefone
+        );
+
+        console.log(
+            "Escola:",
+            dados.escola
+        );
+
+        console.log(
+            "Galpão:",
+            dados.galpao
+        );
+
+        console.log(
+            "Escritório:",
+            dados.escritorio
+        );
+
+
+    </script>
+
+</body>
+
+</html>
