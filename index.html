@@ -2,6 +2,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -1631,6 +1632,213 @@
         }
 
 
+
+        /* =========================================================
+           AGENDA MENSAL E ÚLTIMAS NOTÍCIAS
+           Mantém a identidade visual: preto, amarelo e tipografia do site.
+           ========================================================= */
+
+        .atualizacoes {
+            background: #151515;
+            color: var(--branco);
+        }
+
+        .atualizacoes-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 28px;
+            align-items: stretch;
+        }
+
+        .atualizacao-painel {
+            min-width: 0;
+            background: var(--cinza-escuro);
+            border-top: 6px solid var(--amarelo);
+            padding: 30px;
+        }
+
+        .atualizacao-painel h3 {
+            font-family: var(--titulo);
+            font-size: clamp(38px, 4vw, 54px);
+            line-height: 0.95;
+            color: var(--amarelo);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .atualizacao-intro {
+            color: #bbb;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .agenda-lista {
+            list-style: none;
+            display: grid;
+            gap: 12px;
+        }
+
+        .agenda-item {
+            display: grid;
+            grid-template-columns: 78px 1fr;
+            gap: 16px;
+            padding: 16px 0;
+            border-bottom: 1px solid #3b3b3b;
+        }
+
+        .agenda-data {
+            background: var(--amarelo);
+            color: var(--preto);
+            min-height: 68px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-weight: 900;
+            line-height: 1.1;
+            padding: 8px;
+        }
+
+        .agenda-data strong {
+            font-family: var(--titulo);
+            font-size: 30px;
+        }
+
+        .agenda-data span {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .agenda-evento h4 {
+            color: var(--branco);
+            font-size: 17px;
+            margin-bottom: 6px;
+        }
+
+        .agenda-evento p {
+            color: #bbb;
+            font-size: 14px;
+            line-height: 1.55;
+        }
+
+        .noticias-carrossel {
+            position: relative;
+            overflow: hidden;
+            background: #090909;
+            border: 2px solid #333;
+        }
+
+        .noticia-slide {
+            display: none;
+            min-height: 390px;
+            animation: noticiaEntrar 0.55s ease;
+        }
+
+        .noticia-slide.active {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .noticia-imagem {
+            width: 100%;
+            height: 255px;
+            object-fit: cover;
+            display: block;
+            background: #222;
+        }
+
+        .noticia-conteudo {
+            padding: 22px;
+            flex: 1;
+            border-top: 4px solid var(--amarelo);
+        }
+
+        .noticia-conteudo h4 {
+            font-family: var(--titulo);
+            font-size: 32px;
+            line-height: 1;
+            color: var(--amarelo);
+            margin-bottom: 10px;
+        }
+
+        .noticia-conteudo p {
+            color: #ccc;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        .noticia-controles {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 14px 18px;
+            background: #090909;
+            border-top: 1px solid #333;
+        }
+
+        .noticia-contador {
+            color: #bbb;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .noticia-botao {
+            width: 42px;
+            height: 42px;
+            border: 2px solid var(--amarelo);
+            background: transparent;
+            color: var(--amarelo);
+            font-size: 22px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .noticia-botao:hover {
+            background: var(--amarelo);
+            color: var(--preto);
+        }
+
+        @keyframes noticiaEntrar {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+
+        @media (min-width: 901px) and (max-width: 1150px) {
+            .menu { gap: 12px; }
+            .menu a { font-size: 12px; letter-spacing: 0.5px; }
+            .logo { font-size: 28px; }
+        }
+
+        @media (max-width: 900px) {
+            .atualizacoes-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .atualizacao-painel {
+                padding: 22px;
+            }
+
+            .agenda-item {
+                grid-template-columns: 68px 1fr;
+                gap: 12px;
+            }
+
+            .noticia-slide {
+                min-height: 0;
+            }
+
+            .noticia-imagem {
+                height: 230px;
+            }
+        }
+
+
         /* =========================================================
            RESPONSIVO
            ========================================================= */
@@ -1936,6 +2144,18 @@
                 </li>
 
                 <li>
+                    <a href="#agenda">
+                        Agenda
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#ultimas-noticias">
+                        Últimas notícias
+                    </a>
+                </li>
+
+                <li>
                     <a href="#galeria">
                         Galeria
                     </a>
@@ -2157,6 +2377,146 @@
 
         </div>
 
+
+
+        <!-- =====================================================
+             AGENDA MENSAL E ÚLTIMAS NOTÍCIAS
+             COMO EDITAR:
+             - Agenda: altere o mês, as datas, os títulos e as descrições
+               nos itens com a classe "agenda-item".
+             - Notícias: altere o src de cada imagem e os textos nos
+               8 blocos "noticia-slide". Use caminhos como imagens/noticia-01.jpg.
+             - Mantenha as imagens dentro da pasta imagens do site.
+             ===================================================== -->
+        <section class="atualizacoes" id="agenda">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-number">06 / Fique por dentro</div>
+                    <h2 class="section-title">Agenda &amp;<br><span>notícias.</span></h2>
+                </div>
+
+                <div class="atualizacoes-grid">
+                    <!-- ================= AGENDA MENSAL =================
+                         EDITE O NOME DO MÊS NO TÍTULO ABAIXO.
+                         Para adicionar um evento, copie um bloco <li class="agenda-item">.
+                         Para remover um evento, apague o bloco inteiro desse evento.
+                         ================================================= -->
+                    <div class="atualizacao-painel reveal">
+                        <h3>Agenda mensal</h3>
+                        <p class="atualizacao-intro">Confira os encontros, atividades e eventos do Afrolaboratório.</p>
+
+                        <ul class="agenda-lista">
+                            <!-- EVENTO 1: troque dia, mês, título e descrição -->
+                            <li class="agenda-item">
+                                <div class="agenda-data"><strong>24</strong><span>OUT</span></div>
+                                <div class="agenda-evento">
+                                    <h4>TREINO PARA A COPA DOS CRIAS 10H</h4>
+                                    <p>QUADRA DAS CASINHAS - 10H</p>
+                                </div>
+                            </li>
+
+                            <!-- EVENTO 2: copie este modelo para adicionar mais datas -->
+                            <li class="agenda-item">
+                                <div class="agenda-data"><strong>26</strong><span>OUT</span></div>
+                                <div class="agenda-evento">
+                                    <h4>GRAVAÇÃO HIP HOP TV</h4>
+                                    <p>TVE </p>
+                                </div>
+                            </li>
+
+                            <!-- EVENTO 3 -->
+                            <li class="agenda-item">
+                                <div class="agenda-data"><strong>31</strong><span>OUT</span></div>
+                                <div class="agenda-evento">
+                                    <h4>HALLOWEEN - FESTA À FANTASIA - DIA DO SACI</h4>
+                                    <p>GALPÃO CULTURAL DO HIP HOP</p>
+                                </div>
+                            </li>
+
+                            <!-- EVENTO 4 -->
+                            <li class="agenda-item">
+                                <div class="agenda-data"><strong>DD</strong><span>MÊS</span></div>
+                                <div class="agenda-evento">
+                                    <h4>Evento cultural</h4>
+                                    <p>Escreva aqui os detalhes para o público se organizar e participar.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- ================= ÚLTIMAS NOTÍCIAS =================
+                         A cada 3 segundos uma notícia será substituída por outra.
+                         Troque o src="imagens/noticia-01.jpg" pelo nome da sua imagem.
+                         As 8 imagens abaixo são caminhos de exemplo: coloque os arquivos
+                         correspondentes dentro da pasta imagens para que apareçam.
+                         ================================================= -->
+                    <div class="atualizacao-painel reveal" id="ultimas-noticias">
+                        <h3>Últimas notícias</h3>
+                        <p class="atualizacao-intro">Acompanhe os registros, novidades e ações do nosso território.</p>
+
+                        <div class="noticias-carrossel" aria-live="polite">
+                            <!-- NOTÍCIA 1: altere imagem, título e descrição -->
+                            <article class="noticia-slide active">
+                                <img class="noticia-imagem" src="imagens/noticia-01.jpg" alt="Imagem da notícia 1">
+                                <div class="noticia-conteudo"><h4>instituto virouzueira e afrolaboratório realizam o evento "virouzueira na comunidade" nessa edição no galpão cultural do hiphop.
+                                    confira!!
+                                </p></div>
+                            </article>
+
+                            <!-- NOTÍCIA 2 -->
+                            <article class="noticia-slide">
+                                <img class="noticia-imagem" src="imagens/noticia-02.jpg" alt="Imagem da notícia 2">
+                                <div class="noticia-conteudo"><h4>Título da notícia 2</h4><p>Escreva aqui o texto curto da segunda notícia.</p></div>
+                            </article>
+
+                            <!-- NOTÍCIA 3 -->
+                            <article class="noticia-slide">
+                                <img class="noticia-imagem" src="imagens/noticia-03.jpg" alt="Imagem da notícia 3">
+                                <div class="noticia-conteudo"><h4>Título da notícia 3</h4><p>Escreva aqui o texto curto da terceira notícia.</p></div>
+                            </article>
+
+                            <!-- NOTÍCIA 4 -->
+                            <article class="noticia-slide">
+                                <img class="noticia-imagem" src="imagens/noticia-04.jpg" alt="Imagem da notícia 4">
+                                <div class="noticia-conteudo"><h4>Título da notícia 4</h4><p>Escreva aqui o texto curto da quarta notícia.</p></div>
+                            </article>
+
+                            <!-- NOTÍCIA 5 -->
+                            <article class="noticia-slide">
+                                <img class="noticia-imagem" src="imagens/noticia-05.jpg" alt="Imagem da notícia 5">
+                                <div class="noticia-conteudo"><h4>Título da notícia 5</h4><p>Escreva aqui o texto curto da quinta notícia.</p></div>
+                            </article>
+
+                            <!-- NOTÍCIA 6 -->
+                            <article class="noticia-slide">
+                                <img class="noticia-imagem" src="imagens/noticia-06.jpg" alt="Imagem da notícia 6">
+                                <div class="noticia-conteudo"><h4>Título da notícia 6</h4><p>Escreva aqui o texto curto da sexta notícia.</p></div>
+                            </article>
+
+                            <!-- NOTÍCIA 7 -->
+                            <article class="noticia-slide">
+                                <img class="noticia-imagem" src="imagens/noticia-07.jpg" alt="Imagem da notícia 7">
+                                <div class="noticia-conteudo"><h4>Título da notícia 7</h4><p>Escreva aqui o texto curto da sétima notícia.</p></div>
+                            </article>
+
+                            <!-- NOTÍCIA 8 -->
+                            <article class="noticia-slide">
+                                <img class="noticia-imagem" src="imagens/noticia-08.jpg" alt="Imagem da notícia 8">
+                                <div class="noticia-conteudo"><h4>Título da notícia 8</h4><p>Escreva aqui o texto curto da oitava notícia.</p></div>
+                            </article>
+                        </div>
+
+                        <div class="noticia-controles">
+                            <span class="noticia-contador" id="noticiaContador">Notícia 1 de 8</span>
+                            <div>
+                                <button class="noticia-botao" id="noticiaAnterior" type="button" aria-label="Notícia anterior">‹</button>
+                                <button class="noticia-botao" id="noticiaProxima" type="button" aria-label="Próxima notícia">›</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- =====================================================
              SOBRE
@@ -3962,10 +4322,7 @@ patrimônio imaterial.</p>
 
         /* =========================================================
            MAPA PRINCIPAL DO CONTATO
-           =========================================================
-
-           
-
+           ========================================================= */
 
         document.getElementById(
             "mapLink"
@@ -4077,6 +4434,60 @@ patrimônio imaterial.</p>
             }
         );
 
+
+
+
+        /* =========================================================
+           CARROSSEL DE ÚLTIMAS NOTÍCIAS
+           Troca automaticamente a cada 3 segundos (3000 milissegundos).
+           Para alterar o intervalo, mude o número 3000 abaixo.
+           ========================================================= */
+        const noticiasSlides = Array.from(
+            document.querySelectorAll(".noticia-slide")
+        );
+        const noticiaContador = document.getElementById("noticiaContador");
+        const noticiaAnterior = document.getElementById("noticiaAnterior");
+        const noticiaProxima = document.getElementById("noticiaProxima");
+        let noticiaAtual = 0;
+        let temporizadorNoticias;
+
+        function mostrarNoticia(indice) {
+            if (!noticiasSlides.length) return;
+
+            noticiasSlides[noticiaAtual].classList.remove("active");
+            noticiaAtual = (indice + noticiasSlides.length) % noticiasSlides.length;
+            noticiasSlides[noticiaAtual].classList.add("active");
+
+            if (noticiaContador) {
+                noticiaContador.textContent =
+                    "Notícia " + (noticiaAtual + 1) + " de " + noticiasSlides.length;
+            }
+        }
+
+        function reiniciarTemporizadorNoticias() {
+            clearInterval(temporizadorNoticias);
+            temporizadorNoticias = setInterval(function () {
+                mostrarNoticia(noticiaAtual + 1);
+            }, 3000);
+        }
+
+        if (noticiasSlides.length) {
+            if (noticiaAnterior) {
+                noticiaAnterior.addEventListener("click", function () {
+                    mostrarNoticia(noticiaAtual - 1);
+                    reiniciarTemporizadorNoticias();
+                });
+            }
+
+            if (noticiaProxima) {
+                noticiaProxima.addEventListener("click", function () {
+                    mostrarNoticia(noticiaAtual + 1);
+                    reiniciarTemporizadorNoticias();
+                });
+            }
+
+            reiniciarTemporizadorNoticias();
+        }
 
 
         /* =========================================================
